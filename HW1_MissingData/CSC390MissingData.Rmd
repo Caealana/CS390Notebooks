@@ -1,0 +1,25 @@
+---
+title: "CS390MissingData"
+author: "Sabrina Sayasith"
+date: "9/30/2017"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+#Set Up
+```{r, message=FALSE}
+#load libraries, import csv
+require(mosaic)
+missingVals = read.csv("WholesaleCustomersDataMissing.csv")  # read csv file 
+```
+
+```{r}
+#source to visualize missing data: https://www.r-bloggers.com/ggplot-your-missing-data-2/
+library(Amelia)
+missmap(missingVals)
+```
+
+From our visualization of the missing values, you can see that we have empty cells for Detergents)Paper, Grocery, Delicassen, and Milk.
